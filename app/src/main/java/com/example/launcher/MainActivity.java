@@ -11,7 +11,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String targetPackage = "com.google.android.apps.photosgo"; // CHANGE THIS
+        String pkg = "com.google.android.apps.photosgo"; // CHANGE THIS
 
         // 1. Standard launcher (what you already do)
         Intent intent = getPackageManager().getLaunchIntentForPackage(pkg);
