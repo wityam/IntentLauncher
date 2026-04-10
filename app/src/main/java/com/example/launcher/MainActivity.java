@@ -13,14 +13,24 @@ public class MainActivity extends Activity {
 
         String targetPackage = "com.google.android.apps.photosgo"; // CHANGE THIS
 
-        Intent intent = getPackageManager().getLaunchIntentForPackage(targetPackage);
+        // 1. Standard launcher (what you already do)
+        Intent intent = getPackageManager().getLaunchIntentForPackage(pkg);
 
-        if (intent != null) {
+        if (intent == null) {
+
+            // 2. Try ACTION_MAIN without CATEGORY_LAUNCHER
+            intent = new Intent(Intent.ACTION_MAIN);
+            intent.setPackage(pkg);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        }
+
+        try {
             startActivity(intent);
-        } else {
-            // fallback: open Play Store
+        } catch (Exception e) {
+
+            // 3. Last fallback → Play Store
             Intent storeIntent = new Intent(Intent.ACTION_VIEW);
-            storeIntent.setData(Uri.parse("market://details?id=" + targetPackage));
+            storeIntent.setData(Uri.parse("market://details?id=" + pkg));
             startActivity(storeIntent);
         }
 
