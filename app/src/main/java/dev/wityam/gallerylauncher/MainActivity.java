@@ -1,4 +1,4 @@
-package com.example.launcher;
+package dev.wityam.gallerylauncher;
 
 import android.app.Activity;
 import android.content.Intent;
