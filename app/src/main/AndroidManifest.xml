@@ -2,14 +2,14 @@
 
     <!-- Required for Android 11+ -->
     <queries>
-        <package android:name="com.example.targetapp"/>
+        <package android:name="com.google.android.apps.photosgo"/>
     </queries>
 
     <application
         android:label="Gallery"
         android:theme="@android:style/Theme.Material.Light.NoActionBar"
-        android:icon="@mipmap/icon">
-
+        android:icon="@mipmap/gallery">
+        
         <activity android:name=".MainActivity" 
             android:exported="true">
             <intent-filter>
