@@ -6,8 +6,9 @@
     </queries>
 
     <application
-        android:label="Intent Launcher"
-        android:theme="@android:style/Theme.Material.Light.NoActionBar">
+        android:label="Gallery"
+        android:theme="@android:style/Theme.Material.Light.NoActionBar"
+        android:icon="@mipmap/icon.png"
 
         <activity android:name=".MainActivity" 
             android:exported="true">
